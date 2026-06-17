@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <cstddef>
 
 struct Bar {
     std::string date;
@@ -16,7 +17,8 @@ struct Bar {
 enum class Signal {
     Buy,
     Sell,
-    Hold
+    Hold,
+    Exit
 };
 
 class Strategy {

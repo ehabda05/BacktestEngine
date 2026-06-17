@@ -1,9 +1,15 @@
-#include <iostream>
 #include "backtest.hpp"
 
-using namespace std;
+int main() {
+    Backtest bt;
 
-int main(int argc, char* argv[]) {
-    cout << "Welcome to the Backtesting Engine!" << endl;
+    bt.setCapital(10000.0);
+    bt.readData("prices.csv");
+
+    MeanReversionStrategy strategy(20, 2.0, 0.5);
+
+    bt.run(strategy);
+    bt.print();
+
     return 0;
 }
